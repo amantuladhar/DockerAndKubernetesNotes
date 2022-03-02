@@ -5,4 +5,4 @@ multilingual = false
 src = "src"
 
 [output.html]
-site-url = "/md-books-test/"
+site-url = "/DockerAndKubernetesNotes/"
