@@ -7,7 +7,8 @@ services:
     ports:
       - "3000:3000"
       - "3001:3001"
-    command: "mdbook serve --hostname '0.0.0.0'"
+        #    command: "mdbook serve --hostname '0.0.0.0'"
+    command: "mdbook serve --hostname '0.0.0.0' & mdbook watch"
     working_dir: "/workdir"
     volumes:
       - "./:/workdir"
