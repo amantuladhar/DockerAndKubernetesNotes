@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rolling Back Update</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Docker and Kubernetes</li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded "><a href="../docker/1_understanding_docker_concepts.html"><strong aria-hidden="true">1.</strong> Understanding Docker Concepts</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Basic Docker Command</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/2_basic_commands.html"><strong aria-hidden="true">2.1.</strong> Basic Commands</a></li><li class="chapter-item expanded "><a href="../docker/3_running_command_inside_container.html"><strong aria-hidden="true">2.2.</strong> Running command inside container</a></li><li class="chapter-item expanded "><a href="../docker/4_docker_cleanup.html"><strong aria-hidden="true">2.3.</strong> Cleanup</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/5_dockerfile.html"><strong aria-hidden="true">3.</strong> Dockerfile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Docker Layer</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/6_understand_docker_layer.html"><strong aria-hidden="true">4.1.</strong> Understand Docker Layer</a></li><li class="chapter-item expanded "><a href="../docker/7_union_file_system.html"><strong aria-hidden="true">4.2.</strong> Union File System</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/8_health_check.html"><strong aria-hidden="true">5.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../docker/9_restart_policies.html"><strong aria-hidden="true">6.</strong> Restart Policies</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Docker Volumes</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/10_docker_volume.html"><strong aria-hidden="true">7.1.</strong> Docker Volume</a></li><li class="chapter-item expanded "><a href="../docker/11_mount_host_path.html"><strong aria-hidden="true">7.2.</strong> Mount host path</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/12_docker_network.html"><strong aria-hidden="true">8.</strong> Docker Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker Compose</li><li class="chapter-item expanded "><a href="../dockercompose/1_docker_compose.html"><strong aria-hidden="true">9.</strong> Docker Compose</a></li><li class="chapter-item expanded "><a href="../dockercompose/2_docker_compose_publish_ports.html"><strong aria-hidden="true">10.</strong> Publishing Ports</a></li><li class="chapter-item expanded "><a href="../dockercompose/3_docker_compose_logs.html"><strong aria-hidden="true">11.</strong> Logs</a></li><li class="chapter-item expanded "><a href="../dockercompose/4_docker_compose_multiple_services.html"><strong aria-hidden="true">12.</strong> Multiple Services</a></li><li class="chapter-item expanded "><a href="../dockercompose/5_docker_compose_volumes.html"><strong aria-hidden="true">13.</strong> Volumes</a></li><li class="chapter-item expanded "><a href="../dockercompose/6_docker_compose_network.html"><strong aria-hidden="true">14.</strong> Network</a></li><li class="chapter-item expanded "><a href="../dockercompose/7_docker_compose_restart_policy.html"><strong aria-hidden="true">15.</strong> Restart Policy</a></li><li class="chapter-item expanded "><a href="../dockercompose/8_docker_compose_health_check.html"><strong aria-hidden="true">16.</strong> Health Check</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Maven Docker Plugin</li><li class="chapter-item expanded "><a href="../maven/1_maven_docker_plugin.html"><strong aria-hidden="true">17.</strong> Maven Docker Plugin</a></li><li class="chapter-item expanded "><a href="../maven/2_maven_docker_healthcheck.html"><strong aria-hidden="true">18.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../maven/3_maven_docker_multiple_container.html"><strong aria-hidden="true">19.</strong> Multiple Container</a></li><li class="chapter-item expanded "><a href="../maven/4_maven_docker_volume.html"><strong aria-hidden="true">20.</strong> Volume</a></li><li class="chapter-item expanded "><a href="../maven/5_maven_docker_network.html"><strong aria-hidden="true">21.</strong> Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Kubernetes</li><li class="chapter-item expanded "><a href="../kube/1_understanding_kubernetes.html"><strong aria-hidden="true">22.</strong> Understanding Kubernetes</a></li><li class="chapter-item expanded "><a href="../kube/2_pods.html"><strong aria-hidden="true">23.</strong> Pods</a></li><li class="chapter-item expanded "><a href="../kube/3_resource_template.html"><strong aria-hidden="true">24.</strong> Update Resource Template</a></li><li class="chapter-item expanded "><a href="../kube/4_liveness_probe.html"><strong aria-hidden="true">25.</strong> Liveness Probe</a></li><li class="chapter-item expanded "><a href="../kube/5_replica_set.html"><strong aria-hidden="true">26.</strong> ReplicaSet</a></li><li class="chapter-item expanded "><a href="../kube/6_service.html"><strong aria-hidden="true">27.</strong> Service</a></li><li class="chapter-item expanded "><a href="../kube/7_readiness_probe.html"><strong aria-hidden="true">28.</strong> Readiness Probe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">29.</strong> Deployment</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../kube/8_creating_deployment.html"><strong aria-hidden="true">29.1.</strong> Creating Deployment</a></li><li class="chapter-item expanded "><a href="../kube/9_rolling_update_deployment_strategy.html"><strong aria-hidden="true">29.2.</strong> Rolling Update Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/10_rolling_back_update.html" class="active"><strong aria-hidden="true">29.3.</strong> Rolling Back Update</a></li><li class="chapter-item expanded "><a href="../kube/11_failed_deployment.html"><strong aria-hidden="true">29.4.</strong> Failed Deployment</a></li><li class="chapter-item expanded "><a href="../kube/11_recreate_deployment_strategy.html"><strong aria-hidden="true">29.5.</strong> Recreate Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/12_blue_green_deployment_strategy.html"><strong aria-hidden="true">29.6.</strong> Blue Green Deployment</a></li></ol></li><li class="chapter-item expanded "><a href="../kube/13_env_variable.html"><strong aria-hidden="true">30.</strong> Environment Variable</a></li><li class="chapter-item expanded "><a href="../kube/14_config_maps.html"><strong aria-hidden="true">31.</strong> Config Maps</a></li><li class="chapter-item expanded "><a href="../kube/15_secrets.html"><strong aria-hidden="true">32.</strong> Secrets</a></li><li class="chapter-item expanded "><a href="../kube/16_host_path.html"><strong aria-hidden="true">33.</strong> Host Path</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="rolling-back-update"><a class="header" href="#rolling-back-update">Rolling Back Update</a></h1>
+<hr />
+<ul>
+<li>From the previous section, you saw updating app with the new version was so easy.</li>
+<li>You just update the image you want to use and Kubernetes does most of the work for us.</li>
+<li>But what if the new version of app we just updated has some bug.</li>
+<li>What is bug turned out to be severe. We need to roll back the updates as fast as possible. We can't let user use unstable app.</li>
+<li>With Kubernetes, rolling back is just as easy.</li>
+</ul>
+<h2 id="using-kubectl-rollout-undo-to-roll-back-update"><a class="header" href="#using-kubectl-rollout-undo-to-roll-back-update">Using <code>kubectl rollout undo</code> to roll back update</a></h2>
+<ul>
+<li>We can use <code>kubectl rollout undo @resource_type @resource_name</code> syntax to undo the update process.</li>
+<li>It is very easy to do so.</li>
+</ul>
+<h2 id="history-of-deployment-rollout"><a class="header" href="#history-of-deployment-rollout">History of <code>Deployment</code> rollout</a></h2>
+<ul>
+<li>You can easily see history revision history</li>
+<li><code>kubectl rollout history @resource_type @resource_name</code></li>
+</ul>
+<pre><code class="language-bash">➜ kubectl rollout history deployment web                                    
+deployment.extensions/web 
+REVISION  CHANGE-CAUSE
+1         &lt;none&gt;
+2         &lt;none&gt;
+3         &lt;none&gt; 
+</code></pre>
+<ul>
+<li>If we do one little extra step, when creating / rolling out the update, we can see some values in <code>CHANGE-CAUSE</code> column.</li>
+<li>If when creating / updating we use <code>--record</code> option. It will record the command we used to make an update.</li>
+<li>The command is then visible in <code>CHANGE-CAUSE</code> column.</li>
+</ul>
+<pre><code class="language-bash">➜ kubectl rollout history deployment web                                             
+deployment.extensions/web 
+REVISION  CHANGE-CAUSE
+2         &lt;none&gt;
+3         &lt;none&gt;
+4         kubectl set image deployment web web=amantuladhar/docker-kubernetes:v1-web --record=true 
+</code></pre>
+<h2 id="getting-more-detail-on-history"><a class="header" href="#getting-more-detail-on-history">Getting more detail on history</a></h2>
+<ul>
+<li>You can see more detail of particular revision by using <code>--revision=@revision_number</code> option.</li>
+</ul>
+<pre><code class="language-bash">➜ kubectl rollout history deployment web --revision 4
+deployment.extensions/web with revision #4
+Pod Template:
+  Labels:       env=prod
+        pod-template-hash=6445f5654d
+        version=v1
+  Annotations:  kubernetes.io/change-cause: kubectl set image deployment web web=amantuladhar/docker-kubernetes:v1-web --record=true
+  Containers:
+   web:
+    Image:      amantuladhar/docker-kubernetes:v1-web
+    Port:       8080/TCP
+    Host Port:  0/TCP
+    Liveness:   http-get http://:8080/test/ delay=10s timeout=1s period=30s #success=1 #failure=3
+    Readiness:  http-get http://:8080/test/ delay=10s timeout=1s period=10s #success=1 #failure=3
+    Environment:        &lt;none&gt;
+    Mounts:     &lt;none&gt;
+  Volumes:      &lt;none&gt; 
+</code></pre>
+<h2 id="rolling-back-to-specific-revision"><a class="header" href="#rolling-back-to-specific-revision">Rolling Back to specific revision</a></h2>
+<ul>
+<li>We can control number of revision history to retain using <code>revisionHistoryLimit</code> property.</li>
+<li>If there are multiple revision we can jump back to particular revision as well</li>
+<li><code>kubectl rollout undo @resource_type @resource_name --to-revision=@revision_number</code></li>
+</ul>
+<pre><code class="language-bash">➜ kubectl rollout undo deployment web --to-revision=2
+deployment.extensions/web rolled back
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../kube/9_rolling_update_deployment_strategy.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../kube/11_failed_deployment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../kube/9_rolling_update_deployment_strategy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../kube/11_failed_deployment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

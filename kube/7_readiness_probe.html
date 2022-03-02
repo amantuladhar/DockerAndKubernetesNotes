@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Readiness Probe</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Docker and Kubernetes</li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded "><a href="../docker/1_understanding_docker_concepts.html"><strong aria-hidden="true">1.</strong> Understanding Docker Concepts</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Basic Docker Command</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/2_basic_commands.html"><strong aria-hidden="true">2.1.</strong> Basic Commands</a></li><li class="chapter-item expanded "><a href="../docker/3_running_command_inside_container.html"><strong aria-hidden="true">2.2.</strong> Running command inside container</a></li><li class="chapter-item expanded "><a href="../docker/4_docker_cleanup.html"><strong aria-hidden="true">2.3.</strong> Cleanup</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/5_dockerfile.html"><strong aria-hidden="true">3.</strong> Dockerfile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Docker Layer</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/6_understand_docker_layer.html"><strong aria-hidden="true">4.1.</strong> Understand Docker Layer</a></li><li class="chapter-item expanded "><a href="../docker/7_union_file_system.html"><strong aria-hidden="true">4.2.</strong> Union File System</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/8_health_check.html"><strong aria-hidden="true">5.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../docker/9_restart_policies.html"><strong aria-hidden="true">6.</strong> Restart Policies</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Docker Volumes</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/10_docker_volume.html"><strong aria-hidden="true">7.1.</strong> Docker Volume</a></li><li class="chapter-item expanded "><a href="../docker/11_mount_host_path.html"><strong aria-hidden="true">7.2.</strong> Mount host path</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/12_docker_network.html"><strong aria-hidden="true">8.</strong> Docker Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker Compose</li><li class="chapter-item expanded "><a href="../dockercompose/1_docker_compose.html"><strong aria-hidden="true">9.</strong> Docker Compose</a></li><li class="chapter-item expanded "><a href="../dockercompose/2_docker_compose_publish_ports.html"><strong aria-hidden="true">10.</strong> Publishing Ports</a></li><li class="chapter-item expanded "><a href="../dockercompose/3_docker_compose_logs.html"><strong aria-hidden="true">11.</strong> Logs</a></li><li class="chapter-item expanded "><a href="../dockercompose/4_docker_compose_multiple_services.html"><strong aria-hidden="true">12.</strong> Multiple Services</a></li><li class="chapter-item expanded "><a href="../dockercompose/5_docker_compose_volumes.html"><strong aria-hidden="true">13.</strong> Volumes</a></li><li class="chapter-item expanded "><a href="../dockercompose/6_docker_compose_network.html"><strong aria-hidden="true">14.</strong> Network</a></li><li class="chapter-item expanded "><a href="../dockercompose/7_docker_compose_restart_policy.html"><strong aria-hidden="true">15.</strong> Restart Policy</a></li><li class="chapter-item expanded "><a href="../dockercompose/8_docker_compose_health_check.html"><strong aria-hidden="true">16.</strong> Health Check</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Maven Docker Plugin</li><li class="chapter-item expanded "><a href="../maven/1_maven_docker_plugin.html"><strong aria-hidden="true">17.</strong> Maven Docker Plugin</a></li><li class="chapter-item expanded "><a href="../maven/2_maven_docker_healthcheck.html"><strong aria-hidden="true">18.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../maven/3_maven_docker_multiple_container.html"><strong aria-hidden="true">19.</strong> Multiple Container</a></li><li class="chapter-item expanded "><a href="../maven/4_maven_docker_volume.html"><strong aria-hidden="true">20.</strong> Volume</a></li><li class="chapter-item expanded "><a href="../maven/5_maven_docker_network.html"><strong aria-hidden="true">21.</strong> Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Kubernetes</li><li class="chapter-item expanded "><a href="../kube/1_understanding_kubernetes.html"><strong aria-hidden="true">22.</strong> Understanding Kubernetes</a></li><li class="chapter-item expanded "><a href="../kube/2_pods.html"><strong aria-hidden="true">23.</strong> Pods</a></li><li class="chapter-item expanded "><a href="../kube/3_resource_template.html"><strong aria-hidden="true">24.</strong> Update Resource Template</a></li><li class="chapter-item expanded "><a href="../kube/4_liveness_probe.html"><strong aria-hidden="true">25.</strong> Liveness Probe</a></li><li class="chapter-item expanded "><a href="../kube/5_replica_set.html"><strong aria-hidden="true">26.</strong> ReplicaSet</a></li><li class="chapter-item expanded "><a href="../kube/6_service.html"><strong aria-hidden="true">27.</strong> Service</a></li><li class="chapter-item expanded "><a href="../kube/7_readiness_probe.html" class="active"><strong aria-hidden="true">28.</strong> Readiness Probe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">29.</strong> Deployment</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../kube/8_creating_deployment.html"><strong aria-hidden="true">29.1.</strong> Creating Deployment</a></li><li class="chapter-item expanded "><a href="../kube/9_rolling_update_deployment_strategy.html"><strong aria-hidden="true">29.2.</strong> Rolling Update Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/10_rolling_back_update.html"><strong aria-hidden="true">29.3.</strong> Rolling Back Update</a></li><li class="chapter-item expanded "><a href="../kube/11_failed_deployment.html"><strong aria-hidden="true">29.4.</strong> Failed Deployment</a></li><li class="chapter-item expanded "><a href="../kube/11_recreate_deployment_strategy.html"><strong aria-hidden="true">29.5.</strong> Recreate Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/12_blue_green_deployment_strategy.html"><strong aria-hidden="true">29.6.</strong> Blue Green Deployment</a></li></ol></li><li class="chapter-item expanded "><a href="../kube/13_env_variable.html"><strong aria-hidden="true">30.</strong> Environment Variable</a></li><li class="chapter-item expanded "><a href="../kube/14_config_maps.html"><strong aria-hidden="true">31.</strong> Config Maps</a></li><li class="chapter-item expanded "><a href="../kube/15_secrets.html"><strong aria-hidden="true">32.</strong> Secrets</a></li><li class="chapter-item expanded "><a href="../kube/16_host_path.html"><strong aria-hidden="true">33.</strong> Host Path</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="readiness-probe"><a class="header" href="#readiness-probe">Readiness Probe</a></h1>
+<hr />
+<h2 id="why-do-we-need-readiness-probe"><a class="header" href="#why-do-we-need-readiness-probe">Why do we need <code>readiness probe</code>?</a></h2>
+<ul>
+<li>We learned how to use <code>ReplicaSet</code>, with that we also learned how to increase number of running Pods.</li>
+<li>With <code>Service</code> we learned how to expose them, with single IP. <code>Service</code> allows us to access our Pods without knowing it's actual IP.</li>
+<li>But when does the <code>Service</code> starts to send a traffic to Pod when we scale up your app?</li>
+</ul>
+<h2 id="understanding-the-problem"><a class="header" href="#understanding-the-problem">Understanding the problem.</a></h2>
+<ul>
+<li>Create a <code>ReplicaSet</code> that runs only 1 copy of our app at the moment.</li>
+<li>Run this command, this will call you app endpoint every second.</li>
+</ul>
+<pre><code class="language-bash">while true ; do curl http://192.168.99.106:30000/test ; echo &quot;\\n&quot; ; sleep 1 ; done;
+</code></pre>
+<ul>
+<li>Instead of IP above, use your own IP.</li>
+<li>Now scale up your app. Run 3 replicas.</li>
+<li>You will start to get some failed request.</li>
+</ul>
+<pre><code class="language-bash">{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.5&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+
+curl: (7) Failed to connect to 192.168.99.106 port 30000: Connection refused
+curl: (7) Failed to connect to 192.168.99.106 port 30000: Connection refused
+curl: (7) Failed to connect to 192.168.99.106 port 30000: Connection refused
+
+
+{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.5&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.5&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+
+curl: (7) Failed to connect to 192.168.99.106 port 30000: Connection refused
+curl: (7) Failed to connect to 192.168.99.106 port 30000: Connection refused
+curl: (7) Failed to connect to 192.168.99.106 port 30000: Connection refused
+
+
+{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.7&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.7&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.6&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.6&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+{&quot;message&quot;:&quot;Hello Fellas!!!&quot;,&quot;host.address&quot;:&quot;172.17.0.5&quot;,&quot;app.version&quot;:&quot;v1-web&quot;}
+</code></pre>
+<ul>
+<li>Why is this happening?</li>
+<li>What happens right now is that, <code>Service</code> starts to send the traffic to a Pod as soon as Pod is started.</li>
+<li>Kubernetes at the moment doesn't have any idea if our Pod is ready to accept connection.</li>
+<li>To help with this problem we use <code>readiness</code> probe.</li>
+</ul>
+<h2 id="what-is-readiness-probe"><a class="header" href="#what-is-readiness-probe">What is <code>readiness</code> probe?</a></h2>
+<ul>
+<li>We learned the <code>liveness</code> probe before.</li>
+<li>With help of <code>liveness</code> probe we were able to restart the Pods that were unhealthy.</li>
+<li>With the help of <code>readiness</code> probe, Kubernetes will be able to know if Pods are ready to accept connection.</li>
+<li>Like <code>liveness</code>, <code>readiness</code> probe is also executed periodically.</li>
+<li>The result determines if Pods is ready or not.</li>
+</ul>
+<h2 id="types-of-readiness-probe"><a class="header" href="#types-of-readiness-probe">Types of <code>readiness</code> probe</a></h2>
+<ul>
+<li>Like <code>liveness</code> probe, we have three ways
+<ul>
+<li><code>Exec</code></li>
+<li><code>HTTP GET</code></li>
+<li><code>TCP Socket</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="add-readiness-probe"><a class="header" href="#add-readiness-probe">Add <code>readiness</code> probe</a></h2>
+<ul>
+<li>To add a <code>readiness</code> probe, we can add it using <code>readinessProbe</code> properties.</li>
+</ul>
+<pre><code class="language-yaml"># ReplicaSet Definition
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  ...
+spec:
+  replicas: 3
+  ...
+  spec:
+    containers:
+        - image: amantuladhar/docker-kubernetes:v1-web
+          name: v1-web-con
+          readinessProbe:            # 1
+            httpGet:                 # 2
+              path: /test/           # 3
+              port: 8080             # 4
+            initialDelaySeconds: 10  # 5
+          ... 
+</code></pre>
+<ul>
+<li><code>#1</code> we use <code>readinessProbe</code> property to add probe in our Pod template.</li>
+<li><code>#2</code> we are using <code>httpGet</code> way of defining probe</li>
+<li><code>#3</code> Which path to ping</li>
+<li><code>#4</code> Which port to expose</li>
+<li><code>#5</code> How many seconds do we delay before sending first probe request.</li>
+</ul>
+<h2 id="readiness-probe-options"><a class="header" href="#readiness-probe-options"><code>Readiness</code> probe options</a></h2>
+<ul>
+<li>Like <code>liveness</code> probe we have few options we can configure
+<ul>
+<li><code>initialDelaySeconds</code>: Number of seconds after the container has started before liveness probes are initiated.</li>
+<li><code>periodSeconds</code>: How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.</li>
+<li><code>timeoutSeconds</code>: Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1.</li>
+<li><code>failureThreshold</code>: When a Pod starts and the probe fails, Kubernetes will try failureThreshold times before giving up. Giving up in case of liveness probe means restarting the Pod. Defaults to 3. Minimum value is 1.</li>
+<li><code>successThreshold</code>: Minimum consecutive successes for the probe to be considered successful after having failed</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-yaml">readinessProbe:
+    httpGet:
+      path: /test/
+      port: 8080
+    initialDelaySeconds: 10
+    successThreshold: 1
+    periodSeconds: 60
+    timeoutSeconds: 5
+    failureThreshold: 3
+</code></pre>
+<h2 id="readiness-probe-in-action"><a class="header" href="#readiness-probe-in-action"><code>Readiness</code> probe in action</a></h2>
+<ul>
+<li>Create a <code>ReplicaSet</code> that runs only 1 copy of our app at the moment.</li>
+<li>Run this command, this will call you app endpoint every second.</li>
+</ul>
+<pre><code class="language-bash">while true ; do curl http://192.168.99.106:30000/test ; echo &quot;\\n&quot; ; sleep 1 ; done;
+</code></pre>
+<ul>
+<li>Instead of IP above, use your own IP.</li>
+<li>Now scale up your app. Run 3 replicas.</li>
+<li>You will only see response from other Pod when they are ready.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../kube/6_service.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../kube/8_creating_deployment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../kube/6_service.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../kube/8_creating_deployment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

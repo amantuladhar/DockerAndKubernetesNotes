@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Dockerfile</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Docker and Kubernetes</li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded "><a href="../docker/1_understanding_docker_concepts.html"><strong aria-hidden="true">1.</strong> Understanding Docker Concepts</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Basic Docker Command</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/2_basic_commands.html"><strong aria-hidden="true">2.1.</strong> Basic Commands</a></li><li class="chapter-item expanded "><a href="../docker/3_running_command_inside_container.html"><strong aria-hidden="true">2.2.</strong> Running command inside container</a></li><li class="chapter-item expanded "><a href="../docker/4_docker_cleanup.html"><strong aria-hidden="true">2.3.</strong> Cleanup</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/5_dockerfile.html" class="active"><strong aria-hidden="true">3.</strong> Dockerfile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Docker Layer</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/6_understand_docker_layer.html"><strong aria-hidden="true">4.1.</strong> Understand Docker Layer</a></li><li class="chapter-item expanded "><a href="../docker/7_union_file_system.html"><strong aria-hidden="true">4.2.</strong> Union File System</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/8_health_check.html"><strong aria-hidden="true">5.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../docker/9_restart_policies.html"><strong aria-hidden="true">6.</strong> Restart Policies</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Docker Volumes</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/10_docker_volume.html"><strong aria-hidden="true">7.1.</strong> Docker Volume</a></li><li class="chapter-item expanded "><a href="../docker/11_mount_host_path.html"><strong aria-hidden="true">7.2.</strong> Mount host path</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/12_docker_network.html"><strong aria-hidden="true">8.</strong> Docker Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker Compose</li><li class="chapter-item expanded "><a href="../dockercompose/1_docker_compose.html"><strong aria-hidden="true">9.</strong> Docker Compose</a></li><li class="chapter-item expanded "><a href="../dockercompose/2_docker_compose_publish_ports.html"><strong aria-hidden="true">10.</strong> Publishing Ports</a></li><li class="chapter-item expanded "><a href="../dockercompose/3_docker_compose_logs.html"><strong aria-hidden="true">11.</strong> Logs</a></li><li class="chapter-item expanded "><a href="../dockercompose/4_docker_compose_multiple_services.html"><strong aria-hidden="true">12.</strong> Multiple Services</a></li><li class="chapter-item expanded "><a href="../dockercompose/5_docker_compose_volumes.html"><strong aria-hidden="true">13.</strong> Volumes</a></li><li class="chapter-item expanded "><a href="../dockercompose/6_docker_compose_network.html"><strong aria-hidden="true">14.</strong> Network</a></li><li class="chapter-item expanded "><a href="../dockercompose/7_docker_compose_restart_policy.html"><strong aria-hidden="true">15.</strong> Restart Policy</a></li><li class="chapter-item expanded "><a href="../dockercompose/8_docker_compose_health_check.html"><strong aria-hidden="true">16.</strong> Health Check</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Maven Docker Plugin</li><li class="chapter-item expanded "><a href="../maven/1_maven_docker_plugin.html"><strong aria-hidden="true">17.</strong> Maven Docker Plugin</a></li><li class="chapter-item expanded "><a href="../maven/2_maven_docker_healthcheck.html"><strong aria-hidden="true">18.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../maven/3_maven_docker_multiple_container.html"><strong aria-hidden="true">19.</strong> Multiple Container</a></li><li class="chapter-item expanded "><a href="../maven/4_maven_docker_volume.html"><strong aria-hidden="true">20.</strong> Volume</a></li><li class="chapter-item expanded "><a href="../maven/5_maven_docker_network.html"><strong aria-hidden="true">21.</strong> Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Kubernetes</li><li class="chapter-item expanded "><a href="../kube/1_understanding_kubernetes.html"><strong aria-hidden="true">22.</strong> Understanding Kubernetes</a></li><li class="chapter-item expanded "><a href="../kube/2_pods.html"><strong aria-hidden="true">23.</strong> Pods</a></li><li class="chapter-item expanded "><a href="../kube/3_resource_template.html"><strong aria-hidden="true">24.</strong> Update Resource Template</a></li><li class="chapter-item expanded "><a href="../kube/4_liveness_probe.html"><strong aria-hidden="true">25.</strong> Liveness Probe</a></li><li class="chapter-item expanded "><a href="../kube/5_replica_set.html"><strong aria-hidden="true">26.</strong> ReplicaSet</a></li><li class="chapter-item expanded "><a href="../kube/6_service.html"><strong aria-hidden="true">27.</strong> Service</a></li><li class="chapter-item expanded "><a href="../kube/7_readiness_probe.html"><strong aria-hidden="true">28.</strong> Readiness Probe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">29.</strong> Deployment</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../kube/8_creating_deployment.html"><strong aria-hidden="true">29.1.</strong> Creating Deployment</a></li><li class="chapter-item expanded "><a href="../kube/9_rolling_update_deployment_strategy.html"><strong aria-hidden="true">29.2.</strong> Rolling Update Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/10_rolling_back_update.html"><strong aria-hidden="true">29.3.</strong> Rolling Back Update</a></li><li class="chapter-item expanded "><a href="../kube/11_failed_deployment.html"><strong aria-hidden="true">29.4.</strong> Failed Deployment</a></li><li class="chapter-item expanded "><a href="../kube/11_recreate_deployment_strategy.html"><strong aria-hidden="true">29.5.</strong> Recreate Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/12_blue_green_deployment_strategy.html"><strong aria-hidden="true">29.6.</strong> Blue Green Deployment</a></li></ol></li><li class="chapter-item expanded "><a href="../kube/13_env_variable.html"><strong aria-hidden="true">30.</strong> Environment Variable</a></li><li class="chapter-item expanded "><a href="../kube/14_config_maps.html"><strong aria-hidden="true">31.</strong> Config Maps</a></li><li class="chapter-item expanded "><a href="../kube/15_secrets.html"><strong aria-hidden="true">32.</strong> Secrets</a></li><li class="chapter-item expanded "><a href="../kube/16_host_path.html"><strong aria-hidden="true">33.</strong> Host Path</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="what-is-dockerfile"><a class="header" href="#what-is-dockerfile">What is <code>Dockerfile</code></a></h1>
+<ul>
+<li><code>Dockerfile</code> is just a plain text file.</li>
+<li>The plain text file contains series of instruction.</li>
+<li>Docker will read <code>Dockerfile</code> when you start the process of building an image.</li>
+<li>It executes the instruction one by one in orderly fashion.</li>
+<li>At the end final read-only image is created.</li>
+<li><strong>It's important to know that Docker uses images to run your code, not the</strong> <code>Dockerfile</code><strong>.</strong></li>
+<li><code>Dockerfile</code> is just a convenient way to build your docker images.</li>
+<li>Default file name for <code>Dockerfile</code> is <code>Dockerfile</code>.</li>
+</ul>
+<p> </p>
+<hr />
+<h2 id="building-an-image"><a class="header" href="#building-an-image">Building an image</a></h2>
+<h3 id="docker-build"><a class="header" href="#docker-build"><code>docker build</code></a></h3>
+<ul>
+<li>Even if you have single instruction <code>FROM</code> you can build your image.</li>
+<li>We can simply execute <code>docker build -f @pathToDockerfile -t @name:@tag @contextPath</code>.</li>
+<li><code>@contextPath</code> is the path where you want docker build context path.</li>
+<li><code>-f</code> takes the path to Dockerfile. If your file exist within the <code>docker build</code> context path and your file name is <code>Dockerfile</code> you don't need to use <code>-f</code> flag.</li>
+<li><code>-t</code> represents <code>tag</code>. This is so that you can name the image you are building.</li>
+<li>If you omit the <code>tag</code> part, docker will add by default <strong>latest</strong> tag.</li>
+<li>Notice when it builds an image, if you don't have the image that you used locally it will download it first.</li>
+</ul>
+<pre><code class="language-bash">➜ docker build -f docker/web-basic -t amantuladhar/doc-kub-ws:web-basic .
+Sending build context to Docker daemon  17.02MB
+Step 1/1 : FROM openjdk:8-jre-alpine
+8-jre-alpine: Pulling from library/openjdk
+6c40cc604d8e: Pull complete 
+e78b80385239: Pull complete 
+f41fe1b6eee3: Pull complete 
+Digest: sha256:712abc7541d52998f14b43998227eeb17fd895cf10957ad5cf195217ab62153e
+Status: Downloaded newer image for openjdk:8-jre-alpine
+ ---&gt; 1b46cc2ba839
+Successfully built 1b46cc2ba839
+Successfully tagged amantuladhar/docker-kubernetes:dockerfile-basics
+</code></pre>
+<ul>
+<li>Run <code>docker image list</code> and you will see your image on the list</li>
+<li>(Psst!! You can go inside your image an play around with it)</li>
+</ul>
+<h2 id="from"><a class="header" href="#from"><code>FROM</code></a></h2>
+<ul>
+<li><code>FROM</code> is the first instruction in <code>Dockerfile</code>.</li>
+<li>Sets the base image for every subsequent instruction.</li>
+<li>If you skip tag, docker will use latest tag.</li>
+<li>Latest tag may not be latest image.</li>
+<li>If we provide invalid tag, docker will complain.</li>
+</ul>
+<pre><code class="language-bash">FROM openjdk:8-jre-alpine
+</code></pre>
+<h2 id="workdir"><a class="header" href="#workdir">WORKDIR</a></h2>
+<ul>
+<li>Sets starting point from where you want to execute subsequent instructions.</li>
+<li>We can set both absolute / relative path</li>
+<li>We can have multiple <code>WORKDIR</code> in images</li>
+<li>If relative path is used, it will be relative to previous <code>WORKDIR</code></li>
+<li>Think of this as changing the directory</li>
+</ul>
+<pre><code class="language-bash">FROM openjdk:8-jre-alpine
+WORKDIR /myApp
+</code></pre>
+<h2 id="copy"><a class="header" href="#copy">COPY</a></h2>
+<ul>
+<li><code>COPY @source @destination</code></li>
+<li>Copies files from source to container file system</li>
+<li>Source can be path or URL</li>
+<li>Path is relative to where build process was started.</li>
+<li>Both can contain wildcards like * and ?</li>
+<li>Let's add our app executable inside docker image.</li>
+<li>Before that you need app.</li>
+<li>You can create one yourself or I have a simple <a href="https://github.com/amantuladhar/DockerKubernetesFiles/blob/master/docker/web-basic">spring app here.</a></li>
+<li>For this exercise lets switch to branch <strong>dockerfile-initial</strong>.</li>
+<li>Let's build <code>jar</code> for our app. <code>./mvnw clean install</code></li>
+<li>Maven creates <code>jar</code> inside <strong>/target</strong> folder.</li>
+</ul>
+<blockquote>
+<p><strong>web-basic</strong> is a Dockerfile has complete instructions.</p>
+</blockquote>
+<pre><code class="language-bash">FROM openjdk:8-jre-alpine
+WORKDIR /myApp
+COPY [&quot;onlyweb/target/*.jar&quot;, &quot;./app.jar&quot;]
+</code></pre>
+<ul>
+<li>That's it. Build your image. Go inside an run the app</li>
+</ul>
+<pre><code class="language-bash">Sending build context to Docker daemon  17.03MB
+Step 1/3 : FROM openjdk:8-jre-alpine
+ ---&gt; 1b46cc2ba839
+Step 2/3 : WORKDIR /myApp
+ ---&gt; Running in 529b938e7bde
+Removing intermediate container 529b938e7bde
+ ---&gt; a40643187675
+Step 3/3 : COPY [&quot;onlyweb/target/*.jar&quot;, &quot;./app.jar&quot;]
+ ---&gt; 63722ad415fe
+Successfully built 63722ad415fe
+Successfully tagged amantuladhar/doc-kub-ws:web-basic
+</code></pre>
+<p> </p>
+<hr />
+<h2 id="running-your-app"><a class="header" href="#running-your-app">Running your app</a></h2>
+<h3 id="docker-run--it-amantuladhardoc-kub-wsweb-basic"><a class="header" href="#docker-run--it-amantuladhardoc-kub-wsweb-basic"><code>docker run -it amantuladhar/doc-kub-ws:web-basic</code></a></h3>
+<pre><code class="language-bash">➜ docker run -it amantuladhar/doc-kub-ws:web-basic
+/myApp # ls
+app.jar
+
+/myApp # java -jar app.jar 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
+...
+...
+2019-02-13 15:02:09.789  INFO 9 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+</code></pre>
+<ul>
+<li>You still can't access the app from outside as you haven't asked docker to export the port the app is listening to.</li>
+</ul>
+<h2 id="add"><a class="header" href="#add">ADD</a></h2>
+<ul>
+<li>ADD @source @destination</li>
+<li>Exactly as COPY</li>
+<li>Has few features like, archive extractions. (Like extracting achieve automatically)</li>
+<li>Best practice is to use <code>COPY</code> if you don’t need those additional features.</li>
+</ul>
+<h2 id="expose"><a class="header" href="#expose">EXPOSE</a></h2>
+<ul>
+<li><code>EXPOSE @port</code></li>
+<li><code>EXPOSE</code> tells Docker the running container listens on specific network ports.</li>
+<li>This acts as a kind of port mapping documentation that can then be used when <strong>publishing the ports</strong>.</li>
+<li><code>EXPOSE</code> will <strong>not allow</strong> communication via the defined ports to containers outside of the same network or to the host machine.</li>
+<li>To allow this to happen you need to publish the ports using <code>-p</code> options when running container</li>
+</ul>
+<pre><code class="language-bash">FROM openjdk:8-jre-alpine
+WORKDIR /myApp
+EXPOSE 8080
+COPY [&quot;onlyweb/target/*.jar&quot;, &quot;./app.jar&quot;]
+</code></pre>
+<h2 id="port-publishing"><a class="header" href="#port-publishing">Port Publishing</a></h2>
+<ul>
+<li>If you want to access your app from the host (outside the container), you need to publish the port where your app is expecting a connection.</li>
+<li>To do that we have <code>-p @hostPort:@containerPort</code> option.</li>
+<li>To access your app on <strong>localhost:9090</strong></li>
+</ul>
+<pre><code class="language-bash">➜ docker run -it -p 9090:8080 amantuladhar/doc-kub-ws:web-basic
+
+# Running your app inside the container
+/myApp # java -jar app.jar 
+....
+....
+2019-02-14 04:47:05.036  INFO 10 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-02-14 04:47:05.046  INFO 10 --- [           main] c.e.cloudnative.CloudNativeApplication   : Started CloudNativeApplication in 4.73 seconds (JVM running for 5.685)
+</code></pre>
+<ul>
+<li>Here's a response that we get when we call <code>localhost:9090/test</code></li>
+</ul>
+<pre><code class="language-bash">➜ http localhost:9090/test  
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Date: Thu, 14 Feb 2019 04:49:07 GMT
+Transfer-Encoding: chunked
+
+{
+    &quot;app.version&quot;: &quot;v1-web&quot;,
+    &quot;host.address&quot;: &quot;172.17.0.2&quot;,
+    &quot;message&quot;: &quot;Hello Fellas!!!&quot;
+}
+</code></pre>
+<h2 id="run"><a class="header" href="#run">RUN</a></h2>
+<ul>
+<li><code>RUN @command</code></li>
+<li><code>RUN</code> is central executing instruction for <code>Dockerfile</code>.</li>
+<li><code>RUN</code> command will execute a command or list of command in a new layer on top of current image</li>
+<li>Resulting image will be new base image for subsequent instruction</li>
+<li>To make your <code>Dockerfile</code> more readable and easier to maintain, you can split long or complex <code>RUN</code> statements on <strong>multiple lines separating them with a backslash (</strong> <code>\</code> <strong>)</strong></li>
+<li>Lets install <code>curl</code> in our image. (We will need to use <code>curl</code> later)</li>
+<li><code>RUN apk add --no-cache curl</code></li>
+</ul>
+<pre><code class="language-bash">FROM openjdk:8-jre-alpine
+WORKDIR /myApp
+EXPOSE 8080
+RUN apk add --no-cache curl
+COPY [&quot;onlyweb/target/*.jar&quot;, &quot;./app.jar&quot;]
+</code></pre>
+<ul>
+<li>If you build your app now, you will have <code>curl</code> command when you run the container.</li>
+<li>You can test if <code>curl</code> exist if you want.</li>
+</ul>
+<pre><code class="language-bash">➜ docker build -f docker/web-basic -t amantuladhar/doc-kub-ws:web-basic          
+...
+Step 4/5 : RUN apk add --no-cache curl
+ ---&gt; Running in 883ac8f78866
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+(1/4) Installing nghttp2-libs (1.35.1-r0)
+(2/4) Installing libssh2 (1.8.0-r4)
+(3/4) Installing libcurl (7.63.0-r0)
+(4/4) Installing curl (7.63.0-r0)
+...
+</code></pre>
+<h2 id="entrypoint"><a class="header" href="#entrypoint">ENTRYPOINT</a></h2>
+<ul>
+<li>The <code>ENTRYPOINT</code> specifies a command that will always be executed when the container starts.</li>
+<li>Docker has a default <code>ENTRYPOINT</code> which is <code>/bin/sh -c</code></li>
+<li><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code> is the exec form, preferred and recommended.</li>
+<li><code>ENTRYPOINT command param1 parm2</code> is a shell form.</li>
+<li><code>ENTRYPOINT</code> is the runtime instruction, but <code>RUN</code>, <code>ADD</code> are build time instructions.</li>
+<li>We can use <code>--entrypoint</code> option to override when you run the container.</li>
+</ul>
+<pre><code class="language-bash">FROM openjdk:8-jre-alpine
+WORKDIR /myApp
+EXPOSE 8080
+RUN apk add --no-cache curl
+COPY [&quot;onlyweb/target/*.jar&quot;, &quot;./app.jar&quot;]
+ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]
+</code></pre>
+<ul>
+<li>Build the image and run the image, without <code>-it</code> option.</li>
+<li><code>docker run -p 9090:8080 amantuladhar/doc-kub-ws:web-basic</code></li>
+<li>You app will run, you didn't needed to go inside the container and execute the command yourself.</li>
+<li><code>-p 9090:8080</code> was added so that you can access your app from host.</li>
+</ul>
+<h2 id="cmd"><a class="header" href="#cmd">CMD</a></h2>
+<ul>
+<li><code>CMD</code> also specifies a command that will execute when container starts.</li>
+<li>The <code>CMD</code> specifies the arguments that will be fed to the <code>ENTRYPOINT</code>.</li>
+<li><code>CMD [&quot;executable&quot;,&quot;parameter1&quot;,&quot;parameter2&quot;]</code> this is a so called exec form. (Preferred)</li>
+<li><code>CMD command parameter1 parameter2</code> this a shell form of the instruction.</li>
+<li>Like <code>ENTRYPOINT</code> <code>CMD</code> is a runtime instruction as well.</li>
+<li>You already know how to override the <code>CMD</code>, just pass it after the image name when you run the container.</li>
+</ul>
+<pre><code class="language-bash">FROM openjdk:8-jre-alpine
+WORKDIR /myApp
+EXPOSE 8080
+RUN apk add --no-cache curl
+COPY [&quot;onlyweb/target/*.jar&quot;, &quot;./app.jar&quot;]
+ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;]
+CMD [&quot;app.jar&quot;]
+</code></pre>
+<ul>
+<li>As you can see, <code>ENTRYPOINT</code> defines the command that gets executed when container starts.</li>
+<li><code>CMD</code> is passing argument to <code>ENTRYPOINT</code>.</li>
+<li>Build and run the app. <code>docker run -p 9090:8080 amantuladhar/doc-kub-ws:web-basic</code>.</li>
+</ul>
+<h2 id="overriding-cmd"><a class="header" href="#overriding-cmd"><strong>Overriding CMD</strong></a></h2>
+<ul>
+<li><code>docker run @image@command @arguments</code>.</li>
+<li><code>docker run -p 9090:8080 amantuladhar/doc-kub-ws:web-basic test.jar</code>.</li>
+<li>Of course above command won't run because we don't have <code>test.jar</code> in our image.</li>
+</ul>
+<pre><code class="language-bash">➜ docker run -p 9090:8080 amantuladhar/doc-kub-ws:web-basic test.jar
+Error: Unable to access jarfile test.jar
+</code></pre>
+<ul>
+<li>How about we try to attach container terminal to host terminal using <code>-it</code></li>
+<li><code>docker run -it amantuladhar/doc-kub-ws:web-basic</code> won't work as this will run the app.</li>
+<li><code>docker run -it amantuladhar/doc-kub-ws:web-basic sh</code> won't work as it internally run <code>java -jar sh</code>.</li>
+<li>If you really want to attach container terminal to host terminal you need to override the <code>ENTRYPOINT</code>.</li>
+<li><code>docker run --entrypoint sh -it amantuladhar/doc-kub-ws:web-basic</code></li>
+</ul>
+<pre><code class="language-bash">➜ docker run --entrypoint sh  -it amantuladhar/doc-kub-ws:web-basic        
+/myApp #
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../docker/4_docker_cleanup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../docker/6_understand_docker_layer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../docker/4_docker_cleanup.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../docker/6_understand_docker_layer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

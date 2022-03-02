@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Maven Docker Plugin</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Docker and Kubernetes</li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded "><a href="../docker/1_understanding_docker_concepts.html"><strong aria-hidden="true">1.</strong> Understanding Docker Concepts</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Basic Docker Command</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/2_basic_commands.html"><strong aria-hidden="true">2.1.</strong> Basic Commands</a></li><li class="chapter-item expanded "><a href="../docker/3_running_command_inside_container.html"><strong aria-hidden="true">2.2.</strong> Running command inside container</a></li><li class="chapter-item expanded "><a href="../docker/4_docker_cleanup.html"><strong aria-hidden="true">2.3.</strong> Cleanup</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/5_dockerfile.html"><strong aria-hidden="true">3.</strong> Dockerfile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Docker Layer</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/6_understand_docker_layer.html"><strong aria-hidden="true">4.1.</strong> Understand Docker Layer</a></li><li class="chapter-item expanded "><a href="../docker/7_union_file_system.html"><strong aria-hidden="true">4.2.</strong> Union File System</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/8_health_check.html"><strong aria-hidden="true">5.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../docker/9_restart_policies.html"><strong aria-hidden="true">6.</strong> Restart Policies</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Docker Volumes</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../docker/10_docker_volume.html"><strong aria-hidden="true">7.1.</strong> Docker Volume</a></li><li class="chapter-item expanded "><a href="../docker/11_mount_host_path.html"><strong aria-hidden="true">7.2.</strong> Mount host path</a></li></ol></li><li class="chapter-item expanded "><a href="../docker/12_docker_network.html"><strong aria-hidden="true">8.</strong> Docker Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Docker Compose</li><li class="chapter-item expanded "><a href="../dockercompose/1_docker_compose.html"><strong aria-hidden="true">9.</strong> Docker Compose</a></li><li class="chapter-item expanded "><a href="../dockercompose/2_docker_compose_publish_ports.html"><strong aria-hidden="true">10.</strong> Publishing Ports</a></li><li class="chapter-item expanded "><a href="../dockercompose/3_docker_compose_logs.html"><strong aria-hidden="true">11.</strong> Logs</a></li><li class="chapter-item expanded "><a href="../dockercompose/4_docker_compose_multiple_services.html"><strong aria-hidden="true">12.</strong> Multiple Services</a></li><li class="chapter-item expanded "><a href="../dockercompose/5_docker_compose_volumes.html"><strong aria-hidden="true">13.</strong> Volumes</a></li><li class="chapter-item expanded "><a href="../dockercompose/6_docker_compose_network.html"><strong aria-hidden="true">14.</strong> Network</a></li><li class="chapter-item expanded "><a href="../dockercompose/7_docker_compose_restart_policy.html"><strong aria-hidden="true">15.</strong> Restart Policy</a></li><li class="chapter-item expanded "><a href="../dockercompose/8_docker_compose_health_check.html"><strong aria-hidden="true">16.</strong> Health Check</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Maven Docker Plugin</li><li class="chapter-item expanded "><a href="../maven/1_maven_docker_plugin.html" class="active"><strong aria-hidden="true">17.</strong> Maven Docker Plugin</a></li><li class="chapter-item expanded "><a href="../maven/2_maven_docker_healthcheck.html"><strong aria-hidden="true">18.</strong> Health Check</a></li><li class="chapter-item expanded "><a href="../maven/3_maven_docker_multiple_container.html"><strong aria-hidden="true">19.</strong> Multiple Container</a></li><li class="chapter-item expanded "><a href="../maven/4_maven_docker_volume.html"><strong aria-hidden="true">20.</strong> Volume</a></li><li class="chapter-item expanded "><a href="../maven/5_maven_docker_network.html"><strong aria-hidden="true">21.</strong> Network</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Kubernetes</li><li class="chapter-item expanded "><a href="../kube/1_understanding_kubernetes.html"><strong aria-hidden="true">22.</strong> Understanding Kubernetes</a></li><li class="chapter-item expanded "><a href="../kube/2_pods.html"><strong aria-hidden="true">23.</strong> Pods</a></li><li class="chapter-item expanded "><a href="../kube/3_resource_template.html"><strong aria-hidden="true">24.</strong> Update Resource Template</a></li><li class="chapter-item expanded "><a href="../kube/4_liveness_probe.html"><strong aria-hidden="true">25.</strong> Liveness Probe</a></li><li class="chapter-item expanded "><a href="../kube/5_replica_set.html"><strong aria-hidden="true">26.</strong> ReplicaSet</a></li><li class="chapter-item expanded "><a href="../kube/6_service.html"><strong aria-hidden="true">27.</strong> Service</a></li><li class="chapter-item expanded "><a href="../kube/7_readiness_probe.html"><strong aria-hidden="true">28.</strong> Readiness Probe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">29.</strong> Deployment</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../kube/8_creating_deployment.html"><strong aria-hidden="true">29.1.</strong> Creating Deployment</a></li><li class="chapter-item expanded "><a href="../kube/9_rolling_update_deployment_strategy.html"><strong aria-hidden="true">29.2.</strong> Rolling Update Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/10_rolling_back_update.html"><strong aria-hidden="true">29.3.</strong> Rolling Back Update</a></li><li class="chapter-item expanded "><a href="../kube/11_failed_deployment.html"><strong aria-hidden="true">29.4.</strong> Failed Deployment</a></li><li class="chapter-item expanded "><a href="../kube/11_recreate_deployment_strategy.html"><strong aria-hidden="true">29.5.</strong> Recreate Deployment Strategy</a></li><li class="chapter-item expanded "><a href="../kube/12_blue_green_deployment_strategy.html"><strong aria-hidden="true">29.6.</strong> Blue Green Deployment</a></li></ol></li><li class="chapter-item expanded "><a href="../kube/13_env_variable.html"><strong aria-hidden="true">30.</strong> Environment Variable</a></li><li class="chapter-item expanded "><a href="../kube/14_config_maps.html"><strong aria-hidden="true">31.</strong> Config Maps</a></li><li class="chapter-item expanded "><a href="../kube/15_secrets.html"><strong aria-hidden="true">32.</strong> Secrets</a></li><li class="chapter-item expanded "><a href="../kube/16_host_path.html"><strong aria-hidden="true">33.</strong> Host Path</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="maven-docker-plugin"><a class="header" href="#maven-docker-plugin">Maven Docker Plugin</a></h1>
+<hr />
+<h2 id="docker-with-maven-basics"><a class="header" href="#docker-with-maven-basics">Docker with Maven Basics</a></h2>
+<ul>
+<li>We learned <code>docker</code> and <code>docker-compose</code> basics.</li>
+<li>We can easily containerize our app, even if it needs database support.</li>
+<li>While creating images manually by yourself can be done, more human interaction leads to more errors.</li>
+<li>Delegating the image <code>build</code> process to maven gives you a lot of flexibility and also saves a lot of time.</li>
+<li>This can be especially useful, if you have continuous integration flow set up, using Jenkins for example.</li>
+<li>There are multiple maven plugins for docker. We will be working with
+<ul>
+<li><a href="https://github.com/fabric8io/docker-maven-plugin">fabric8io/docker-maven-plugin</a></li>
+<li>I like this one as this has lots of options and is highly configurable.</li>
+<li>So much that you don’t even need a Dockerfile to build your own image when using this plugin.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>For this chapter we will use <a href="https://github.com/amantuladhar/DockerKubernetesFiles/tree/dockerfile-initial-complete">Spring Simple Web App - <code>dockerfile-initial-complete</code></a> branch. </p>
+</blockquote>
+<h2 id="new-maven-goals"><a class="header" href="#new-maven-goals">New Maven Goals</a></h2>
+<ul>
+<li>If we use <a href="https://github.com/fabric8io/docker-maven-plugin">fabric8io/docker-maven-plugin</a>, we get few new maven goals.</li>
+<li>Some important one that we will cover
+<ul>
+<li><code>docker:build</code>: This will build the docker image from the configuration we add to <code>pom.xml</code>.</li>
+<li><code>docker:start/stop</code>: Run/Stop the image built from configuration.</li>
+<li><code>docker:remove</code>: This is for cleaning up the images and containers.</li>
+<li><code>docker:logs</code>: This prints out the output of the running containers.</li>
+</ul>
+</li>
+</ul>
+<h2 id="using-plugin"><a class="header" href="#using-plugin">Using Plugin</a></h2>
+<ul>
+<li>To use the plugin in you app, you need to add <a href="https://github.com/fabric8io/docker-maven-plugin">fabric8io/docker-maven-plugin</a> to you <code>pom.xml</code>.</li>
+</ul>
+<pre><code class="language-xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;io.fabric8&lt;/groupId&gt;
+            &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;0.28.0&lt;/version&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+<ul>
+<li>This plugin supports lots of configuration, and we put the configuration inside <code>&lt;configuration&gt;</code> tag.</li>
+</ul>
+<pre><code class="language-xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;io.fabric8&lt;/groupId&gt;
+            &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;0.28.0&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;verbose&gt;true&lt;/verbose&gt;
+                &lt;images&gt;
+                    &lt;image&gt;
+
+                    &lt;/image&gt;
+                &lt;/images&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+<ul>
+<li>The important part in the plugin definition is the <code>&lt;configuration&gt;</code> element.</li>
+<li>It has <code>&lt;images&gt;</code> element which allows us to add multiple <code>&lt;image&gt;</code>.</li>
+<li>There are two main elements in the <code>&lt;image&gt;</code>:
+<ul>
+<li>A <code>&lt;build&gt;</code> configuration specifying how images are built.</li>
+<li>A <code>&lt;run&gt;</code> configuration describing how containers should be created and started. Think of this as option that you pass on <code>docker run</code> command.</li>
+</ul>
+</li>
+<li>If you are using the app from GitHub you should have a <code>Dockerfile</code></li>
+</ul>
+<pre><code class="language-dockerfile">FROM openjdk:8-jre-alpine
+WORKDIR /myApp
+EXPOSE 8080
+RUN apk add --no-cache curl
+COPY [&quot;target/*.jar&quot;, &quot;./app.jar&quot;]
+CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]
+</code></pre>
+<h2 id="using-dockerfile"><a class="header" href="#using-dockerfile">Using <code>Dockerfile</code></a></h2>
+<ul>
+<li>Let's add some configuration using <code>build</code> tag.</li>
+</ul>
+<pre><code class="language-xml">&lt;image&gt;
+    &lt;name&gt;docker-kubernetes:${project.version}&lt;/name&gt;
+    &lt;build&gt;
+        &lt;dockerFileDir&gt;${project.basedir}&lt;/dockerFileDir&gt;
+        &lt;dockerFile&gt;Dockerfile&lt;/dockerFile&gt;
+    &lt;/build&gt;
+&lt;/image&gt;
+</code></pre>
+<ul>
+<li>To build the dockerfile you just need to run <code>./mvnw clean package docker:build</code>. It will build your app.</li>
+<li>Default value for <code>&lt;dockerFileDir&gt;</code> is <code>/src/main/docker</code>.</li>
+<li>We have our <code>Dockerfile</code> inside project root directory, so we are overriding the value.</li>
+</ul>
+<h2 id="run-using-dockerstart"><a class="header" href="#run-using-dockerstart">Run using <code>docker:start</code></a></h2>
+<ul>
+<li>It is as simple as <code>./mvnw package docker:start</code>.</li>
+</ul>
+<pre><code class="language-bash">...
+[INFO] --- docker-maven-plugin:0.28.0:start (default-cli) @ cloudnative ---
+[INFO] DOCKER&gt; [docker-kubernetes:v1-web]: Start container b9cbcab4c5a6
+... 
+</code></pre>
+<ul>
+<li>If you list the running container you can see that one container is running.</li>
+<li>Of course, we cannot access the app, we haven't published the port yet.</li>
+</ul>
+<h2 id="stop-using-dockerstop"><a class="header" href="#stop-using-dockerstop">Stop using <code>docker:stop</code></a></h2>
+<ul>
+<li>To stop the running container you can use <code>./mvnw package docker:stop</code></li>
+</ul>
+<pre><code class="language-bash">...
+[INFO] --- docker-maven-plugin:0.28.0:stop (default-cli) @ cloudnative ---
+[INFO] DOCKER&gt; [docker-kubernetes:v1-web]: Stop and removed container b9cbcab4c5a6 after 0 ms
+...
+</code></pre>
+<h2 id="port-publishing"><a class="header" href="#port-publishing">Port Publishing</a></h2>
+<ul>
+<li>We can publish the port easily as well.</li>
+<li>For this plugin we add configuration inside <code>&lt;run&gt;</code> tag.</li>
+<li>Inside <code>&lt;run&gt;</code> tag we use <code>&lt;ports&gt;</code> tag to expose ports.</li>
+<li>Every port mapping are put inside <code>&lt;port&gt;</code> tag.</li>
+</ul>
+<pre><code class="language-xml">&lt;image&gt;
+  &lt;name&gt;docker-kubernetes:${project.version}&lt;/name&gt;
+  &lt;build&gt;
+    &lt;dockerFileDir&gt;${project.basedir}&lt;/dockerFileDir&gt;
+    &lt;dockerFile&gt;Dockerfile&lt;/dockerFile&gt;
+  &lt;/build&gt;
+  &lt;run&gt;
+    &lt;ports&gt;
+      &lt;port&gt;9090:8080&lt;/port&gt;
+    &lt;/ports&gt;
+  &lt;/run&gt;
+&lt;/image&gt; 
+</code></pre>
+<ul>
+<li><code>build</code> and <code>run</code> you app again and you will be able to access it from the host this time.</li>
+</ul>
+<h2 id="logs"><a class="header" href="#logs">Logs</a></h2>
+<ul>
+<li>If you want to see the logs just use <code>docker:logs</code> goal.</li>
+</ul>
+<h2 id="removing-images"><a class="header" href="#removing-images">Removing images</a></h2>
+<pre><code class="language-bash">./mvnw clean package docker:remove
+</code></pre>
+<ul>
+<li>This goal can be used to clean up images and containers.</li>
+<li>By default, all images with a build configuration are removed.</li>
+</ul>
+<h2 id="build-image-without-dockerfile"><a class="header" href="#build-image-without-dockerfile">Build image without <code>Dockerfile</code></a></h2>
+<ul>
+<li>The plugin we are using supports creating <code>Dockerfile</code> in memory.</li>
+<li>Inside the <code>&lt;build&gt;</code> tag, we can write <code>Dockerfile</code> like instructions.</li>
+</ul>
+<pre><code class="language-xml">&lt;image&gt;
+  &lt;name&gt;docker-kubernetes:${project.version}&lt;/name&gt;
+  &lt;build&gt;
+    &lt;from&gt;openjdk:8-jre-alpine&lt;/from&gt;
+    &lt;assembly&gt;
+      &lt;descriptorRef&gt;artifact&lt;/descriptorRef&gt;
+    &lt;/assembly&gt;
+    &lt;cmd&gt;java -jar maven/${project.name}-${project.version}.jar&lt;/cmd&gt;
+  &lt;/build&gt;
+  &lt;run&gt;
+    &lt;ports&gt;
+      &lt;port&gt;9090:8080&lt;/port&gt;
+    &lt;/ports&gt;
+  &lt;/run&gt;
+&lt;/image&gt; 
+</code></pre>
+<ul>
+<li>
+<p><code>&lt;from&gt;</code> is same as <code>FROM</code> instruction.</p>
+</li>
+<li>
+<p><code>&lt;assembly&gt;</code> defines how build artifacts and other files can enter the Docker image. Using this we don't need to use <code>COPY</code> to copy our build artifact.</p>
+</li>
+<li>
+<p>Inside <code>&lt;assembly&gt;</code> we are using <code>&lt;descriptorRef&gt;</code> which has some predefined ways to copy files to image.</p>
+<ul>
+<li><code>artifact-with-dependencies</code>: Attaches project’s artifact and all its dependencies.</li>
+<li><code>artifact</code>: Attaches only the project’s artifact but no dependencies.</li>
+<li><code>project</code>: Attaches the whole Maven project but without the target/ directory.</li>
+<li><code>rootWar</code>: Copies the artifact as ROOT.war to the exposed directory. I.e. Tomcat will then deploy the war under the root context.</li>
+</ul>
+</li>
+<li>
+<p>We are using <code>artifact</code> pre-defined descriptor in our configuration, because we want to copy our <code>jar</code> file only.</p>
+</li>
+<li>
+<p><code>&lt;cmd&gt;</code> is same as <code>CMD</code> instruction.</p>
+</li>
+<li>
+<p>Build and run your app again. You will be able to access your app from the host.</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../dockercompose/8_docker_compose_health_check.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../maven/2_maven_docker_healthcheck.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../dockercompose/8_docker_compose_health_check.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../maven/2_maven_docker_healthcheck.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
